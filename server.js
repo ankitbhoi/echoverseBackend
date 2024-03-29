@@ -12,14 +12,14 @@ const server = require('http').createServer(app);
 
 const io = require('socket.io')(server, {
   cors: {
-    origin: process.env.FRONT_URL,
+    origin: process.env.FRONT_URL || 'https://echoverse-frontend.vercel.app/',
     methods: ['GET', 'POST']
   }
 })
 
 const corsOptions = {
   credentials: true,
-  origin: process.env.FRONT_URL
+  origin: process.env.FRONT_URL || 'https://echoverse-frontend.vercel.app/'
 }
 
 connectDB();
