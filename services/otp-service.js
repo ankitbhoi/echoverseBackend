@@ -17,7 +17,7 @@ class OtpService {
         return await twilio.messages.create({
             to: phone,
             from: process.env.SMS_FROM_NUMBER,
-            body: `Your VoiceClub OTP is ${otp}, this OTP is valid for 5 minutes.`
+            body: `Your Echoverse OTP is ${otp}, this OTP is valid for 5 minutes.`
         });
     }
 
@@ -39,8 +39,8 @@ class OtpService {
         const mailOptions = {
             from: process.env.EMAIL_ID,
             to: mail,
-            subject: 'OTP to access voiceclub',
-            text: `Hey your otp to access voiceclub is ${otp}`
+            subject: 'OTP to access Echoverse',
+            text: `Hey your otp to access Echoverse is ${otp}`
         };
 
         return await transporter.sendMail(mailOptions, function (error, info) {
